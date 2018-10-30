@@ -5,5 +5,9 @@ fetch(RANDOM_DOG_URL)
     return apiResponse.json();
   })
   .then(function(jsonResponse) {
-    console.log(jsonResponse.message);
+    const image = document.createElement("img");
+    image.alt = "Perrito Bonito!";
+    image.src = jsonResponse.message;
+
+    document.querySelector(".doggos").appendChild(image);
   });
