@@ -9,14 +9,16 @@ function onClick(_event) {
 
   fetch(RANDOM_DOG_URL)
     .then(toJson)
-    .then(function(jsonResponse) {
-      const img = makeImageFrom(jsonResponse.message);
-      document.querySelector(".doggos").appendChild(img);
-    });
+    .then(appendImgToDOM);
 }
 
 function toJson(apiResponse) {
   return apiResponse.json();
+}
+
+function appendImgToDOM(jsonResponse) {
+  const img = makeImageFrom(jsonResponse.message);
+  document.querySelector(".doggos").appendChild(img);
 }
 
 function makeImageFrom(dogUrl) {
