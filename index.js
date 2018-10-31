@@ -26,6 +26,15 @@ function onClickBreeds(_event) {
       const breeds = jsonResponse.message;
       console.log(breeds);
     });
+  /*
+  <section id="breed-container">
+    <label for="breed-select">Choose a breed:</label>
+    <select id="breed-select">
+      <option value="">👇👾🎃 Please choose an option below 👇👾🎃</option>
+      <option value="sheepdog">Fraggle Rock</option>
+    </select>
+  </section>
+  */
 }
 
 function toJson(apiResponse) {
