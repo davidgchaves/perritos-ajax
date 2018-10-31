@@ -26,6 +26,9 @@ function onClickBreeds(_event) {
       const breeds = jsonResponse.message;
       //console.log(breeds);
 
+      // Clean container to avoid duplication of elements
+      document.querySelector("#breed-container").innerHTML = "";
+
       // TODO: Extract createLabel function
       const label = document.createElement("label");
       label.htmlFor = "breed-select";
