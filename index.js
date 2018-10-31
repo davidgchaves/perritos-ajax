@@ -47,10 +47,12 @@ function onClickBreeds(_event) {
       document.querySelector("#breed-select").appendChild(option);
 
       const breedsList = Object.keys(breeds);
-      const option2 = document.createElement("option");
-      option2.value = breedsList[76];
-      option2.innerText = capitalizeFirstLetter(breedsList[76]);
-      document.querySelector("#breed-select").appendChild(option2);
+      breedsList.forEach(function(breed) {
+        const option = document.createElement("option");
+        option.value = breed;
+        option.innerText = capitalizeFirstLetter(breed);
+        document.querySelector("#breed-select").appendChild(option);
+      });
     });
 
   function capitalizeFirstLetter(string) {
