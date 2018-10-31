@@ -7,6 +7,9 @@ function start() {
   document
     .querySelector(".list-breeds")
     .addEventListener("click", onClickBreeds);
+  document
+    .querySelector("#breed-container")
+    .addEventListener("change", onChange);
 }
 
 function onClickRandom(_event) {
@@ -70,6 +73,23 @@ function onClickBreeds(_event) {
     </select>
   </section>
   */
+}
+
+function onChange(event) {
+  const selectedBreed = event.target.selectedOptions[0].value;
+  const BREED_IMAGES_URL = `https://dog.ceo/api/breed/${selectedBreed}/images`;
+  fetch(BREED_IMAGES_URL)
+    .then(apiResponse => apiResponse.json())
+    .then(function(jsonResponse) {
+      const imagesUrl = jsonResponse.message;
+      const randomImageUrl = imagesUrl[getRandomInt(imagesUrl.length - 1)];
+      const img = makeImageFrom(randomImageUrl);
+      document.querySelector(".doggos").appendChild(img);
+    });
+}
+
+function getRandomInt(max) {
+  return Math.floor(Math.random() * Math.floor(max));
 }
 
 function toJson(apiResponse) {
