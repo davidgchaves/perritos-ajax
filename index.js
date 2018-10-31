@@ -2,6 +2,9 @@ start();
 
 function start() {
   document.querySelector(".add-doggo").addEventListener("click", onClick);
+  document
+    .querySelector(".list-breeds")
+    .addEventListener("click", onClickBreeds);
 }
 
 function onClick(_event) {
@@ -10,6 +13,10 @@ function onClick(_event) {
   fetch(RANDOM_DOG_URL)
     .then(toJson)
     .then(appendImgToDOM);
+}
+
+function onClickBreeds(_event) {
+  console.log(_event);
 }
 
 function toJson(apiResponse) {
