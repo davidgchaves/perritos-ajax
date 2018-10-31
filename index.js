@@ -20,9 +20,12 @@ function onClickRandom(_event) {
 function onClickBreeds(_event) {
   const LIST_BREEDS_URL = "https://dog.ceo/api/breeds/list/all";
 
-  fetch(LIST_BREEDS_URL).then(function(apiResponse) {
-    console.log(apiResponse);
-  });
+  fetch(LIST_BREEDS_URL)
+    .then(toJson)
+    .then(function(jsonResponse) {
+      const breeds = jsonResponse.message;
+      console.log(breeds);
+    });
 }
 
 function toJson(apiResponse) {
