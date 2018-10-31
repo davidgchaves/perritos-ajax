@@ -1,13 +1,15 @@
 start();
 
 function start() {
-  document.querySelector(".add-doggo").addEventListener("click", onClick);
+  document
+    .querySelector(".add-random-doggo")
+    .addEventListener("click", onClickRandom);
   document
     .querySelector(".list-breeds")
     .addEventListener("click", onClickBreeds);
 }
 
-function onClick(_event) {
+function onClickRandom(_event) {
   const RANDOM_DOG_URL = "https://dog.ceo/api/breeds/image/random";
 
   fetch(RANDOM_DOG_URL)
