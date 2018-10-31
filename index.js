@@ -38,12 +38,19 @@ function onClickBreeds(_event) {
       select.id = "breed-select";
       //console.log(select);
       document.querySelector("#breed-container").appendChild(select);
+
+      // TODO: Extract createOption function
+      const option = document.createElement("option");
+      option.value = "";
+      option.innerText = "👇👾🎃 Please choose an option below 👇👾🎃";
+      //console.log(option);
+      document.querySelector("#breed-select").appendChild(option);
     });
   /*
   <section id="breed-container">
     <label for="breed-select">Choose a breed:</label>  ✅
     <select id="breed-select">  ✅
-      <option value="">👇👾🎃 Please choose an option below 👇👾🎃</option>
+      <option value="">👇👾🎃 Please choose an option below 👇👾🎃</option> ✅
       <option value="sheepdog">Fraggle Rock</option>
     </select>
   </section>
