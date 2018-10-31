@@ -46,15 +46,15 @@ function onClickBreeds(_event) {
       //console.log(option);
       document.querySelector("#breed-select").appendChild(option);
 
-      const razas = Object.keys(breeds);
+      const breedsList = Object.keys(breeds);
       const option2 = document.createElement("option");
-      option2.value = razas[76];
-      option2.innerText = capitalizeFirstLetter(razas[76]);
+      option2.value = breedsList[76];
+      option2.innerText = capitalizeFirstLetter(breedsList[76]);
       document.querySelector("#breed-select").appendChild(option2);
     });
 
   function capitalizeFirstLetter(string) {
-    return string.charAt(0).toUpperCase() + string.slice(1);
+    return `${string.charAt(0).toUpperCase()}${string.slice(1)}`;
   }
   /*
   <section id="breed-container">
